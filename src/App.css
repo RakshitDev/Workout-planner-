@@ -43,6 +43,7 @@ body {
 .nav-btn {
   color: #0172ad;
   cursor: pointer; /* hand cursor, like a link */
+  text-decoration: none; /* nav items are <a> links now: remove the underline */
 }
 
 /* :hover is why CSS lives in a file: inline styles can't do this */
@@ -148,7 +149,13 @@ body {
   margin-top: 6px;
 }
 
-.exercise-card-actions button {
+/* "Details" is a <Link> (an <a>), the others are <button>s: style both the same */
+.exercise-card-actions button,
+.exercise-card-actions a {
+  display: inline-flex; /* center the text inside the <a> */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   flex-grow: 1; /* same as flex: 1 in RN */
   min-height: 44px;
   border-radius: 6px;

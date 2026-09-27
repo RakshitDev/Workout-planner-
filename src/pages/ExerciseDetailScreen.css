@@ -1,0 +1,121 @@
+/* page wrapper: same side space as the header (matches the mockup) */
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 4px 48px 48px;
+}
+
+/* "← Back to exercises" */
+.details-back-link {
+  display: inline-flex; /* arrow and text in a row */
+  align-items: center;
+  gap: 8px;
+  min-height: 44px; /* big enough to tap */
+  align-self: flex-start; /* only as wide as its content, not the full row */
+  font-size: 16px;
+  color: #0172ad;
+  text-decoration: none;
+}
+
+.details-back-link:hover {
+  color: #015887;
+}
+
+/* parent: two columns side by side */
+.main-grid-container {
+  display: grid;
+  grid-template-columns: 520px 1fr; /* image column 520px, details take the rest */
+  gap: 48px; /* space between the two columns */
+}
+
+/* child 1 → goes in column 1 automatically */
+.image-grid {
+  height: 380px;
+  display: flex; /* center the image or the "No image" text */
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #c9d0db; /* placeholder box until the image is there */
+  border-radius: 8px;
+  background: #f5f7fa;
+  color: #5d6b7a;
+  overflow: hidden; /* keep the image inside the rounded corners */
+}
+
+.image-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* whole image visible, no stretching (like resizeMode="contain") */
+  background: #ffffff;
+}
+
+/* child 2 → goes in column 2 automatically */
+.exercise-detail-grid {
+  display: flex; /* inside a grid cell you can use flex again */
+  flex-direction: column;
+  gap: 18px;
+}
+
+.details-title {
+  margin: 0;
+  font-size: 36px;
+}
+
+/* tags wrap onto a new line when they don't fit */
+.details-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.details-tag {
+  padding: 6px 12px;
+  border-radius: 999px; /* pill shape */
+  background: #eef1f5;
+  font-size: 14px;
+}
+
+.details-tag-primary {
+  background: #e6f1f7;
+  color: #015887;
+  font-weight: 600;
+}
+
+.details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.details-subtitle {
+  margin: 0;
+  font-size: 18px;
+}
+
+.details-description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6; /* space between lines: easier to read */
+  color: #3a4757;
+}
+
+/* uses the colors from .btn-primary / .btn-added in App.css */
+.details-add-btn {
+  align-self: flex-start; /* only as wide as its text */
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.details-add-btn:disabled {
+  cursor: default;
+}
+
+.details-status {
+  margin: 0;
+  color: #5d6b7a;
+}
